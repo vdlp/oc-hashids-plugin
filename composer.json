@@ -1,0 +1,15 @@
+{
+    "name": "vdlp/oc-hashids-plugin",
+    "description": "Allows developers to use secure hashed ID's in October CMS powered websites.",
+    "type": "october-plugin",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Van der Let & Partners",
+            "email": "octobercms@vdlp.nl"
+        }
+    ],
+    "require": {
+        "hashids/hashids": "^3.0"
+    }
+}

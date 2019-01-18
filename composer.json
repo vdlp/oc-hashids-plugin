@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "php": ">=7.1",
         "hashids/hashids": "^3.0"
     }
 }

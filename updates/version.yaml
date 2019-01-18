@@ -1,1 +1,2 @@
 1.0.0: First version of Vdlp.Hashids
+1.0.1: Add PHP >= 7.1 as dependency

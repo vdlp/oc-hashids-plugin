@@ -10,7 +10,7 @@ use Vdlp\Hashids\ServiceProviders\HashidsServiceProvider;
 /**
  * Class Plugin
  *
- * @package Vdlp\Redirect
+ * @package Vdlp\Hashids
  */
 class Plugin extends PluginBase
 {

@@ -10,7 +10,7 @@
 <p align="center">
 	<img src="https://badgen.net/packagist/php/vdlp/oc-hashids-plugin">
 	<img src="https://badgen.net/packagist/license/vdlp/oc-hashids-plugin">
-	<img src="https://badgen.net/github/release/vdlp/oc-hashids-plugin">
+	<img src="https://badgen.net/packagist/v/vdlp/oc-hashids-plugin/latest">
 	<img src="https://badgen.net/packagist/dt/vdlp/oc-hashids-plugin">
 	<img src="https://badgen.net/badge/cms/October%20CMS">
 	<img src="https://badgen.net/badge/type/plugin">

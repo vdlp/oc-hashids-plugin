@@ -1,6 +1,22 @@
-# Vdlp.Hashids
+<p align="center">
+	<img height="60px" width="60px" src="https://plugins.vdlp.nl/octobercms/icons/Vdlp.Hashids.svg">
+	<h1 align="center">Vdlp.Hashids</h1>
+</p>
 
-Hashids is a small open-source library that generates short, unique, non-sequential ids from numbers.
+<p align="center">
+	<em>Allows developers to use secure hashed ID's.</em>
+</p>
+
+<p align="center">
+	<img src="https://badgen.net/packagist/php/vdlp/oc-hashids-plugin">
+	<img src="https://badgen.net/packagist/license/vdlp/oc-hashids-plugin">
+	<img src="https://badgen.net/github/release/vdlp/oc-hashids-plugin">
+	<img src="https://badgen.net/packagist/dt/vdlp/oc-hashids-plugin">
+	<img src="https://badgen.net/badge/cms/October%20CMS">
+	<img src="https://badgen.net/badge/type/plugin">
+</p>
+
+Fetches RSS/Atom feeds to put on your website. It can be automated using a cronjob or triggered manually.
 
 It converts numbers like 347 into strings like "yr8", or array of numbers like [27, 986] into "3kTMd".
 

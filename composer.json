@@ -12,5 +12,11 @@
     "require": {
         "php": ">=7.1",
         "hashids/hashids": "^3.0"
+    },
+    "archive": {
+        "exclude": [
+            ".gitignore",
+            ".idea/"
+        ]
     }
 }

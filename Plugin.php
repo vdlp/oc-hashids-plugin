@@ -1,22 +1,15 @@
 <?php
 
+/** @noinspection PhpMissingParentCallCommonInspection */
+
 declare(strict_types=1);
 
 namespace Vdlp\Hashids;
 
 use System\Classes\PluginBase;
-use Vdlp\Hashids\ServiceProviders\HashidsServiceProvider;
 
-/**
- * Class Plugin
- *
- * @package Vdlp\Redirect
- */
 class Plugin extends PluginBase
 {
-    /**
-     * {@inheritdoc}
-     */
     public function pluginDetails(): array
     {
         return [
@@ -28,11 +21,8 @@ class Plugin extends PluginBase
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function register(): void
     {
-        $this->app->register(HashidsServiceProvider::class);
+        $this->app->register(ServiceProvider::class);
     }
 }

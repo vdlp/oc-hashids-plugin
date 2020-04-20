@@ -2,20 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Vdlp\Hashids\ServiceProviders;
+namespace Vdlp\Hashids;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
-use October\Rain\Support\ServiceProvider;
+use October\Rain\Support\ServiceProvider as BaseServiceProvider;
 use Vdlp\Hashids\Classes\HashidsFactory;
 use Vdlp\Hashids\Classes\HashidsManager;
 
-/**
- * Class HashidsServiceProvider
- *
- * @package Vdlp\Hashids\ServiceProviders
- */
-class HashidsServiceProvider extends ServiceProvider
+class ServiceProvider extends BaseServiceProvider
 {
     /**
      * @return void
@@ -23,10 +18,10 @@ class HashidsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config.php' => config_path('hashids.php'),
+            __DIR__ . '/config.php' => config_path('hashids.php'),
         ], 'config');
 
-        $this->mergeConfigFrom(__DIR__ . '/../config.php', 'hashids');
+        $this->mergeConfigFrom(__DIR__ . '/config.php', 'hashids');
     }
 
     /**
@@ -34,11 +29,11 @@ class HashidsServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(HashidsFactory::class, function (): HashidsFactory {
+        $this->app->singleton(HashidsFactory::class, static function (): HashidsFactory {
             return new HashidsFactory();
         });
 
-        $this->app->singleton(HashidsManager::class, function (Container $container): HashidsManager {
+        $this->app->singleton(HashidsManager::class, static function (Container $container): HashidsManager {
             return new HashidsManager(
                 $container->make(Repository::class),
                 $container->make(HashidsFactory::class)

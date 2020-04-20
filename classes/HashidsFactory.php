@@ -7,16 +7,9 @@ namespace Vdlp\Hashids\Classes;
 use Hashids\Hashids as HashidsBase;
 use Hashids\HashidsException;
 
-/**
- * Class HashidsFactory
- *
- * @package Vdlp\Hashids\Classes
- */
 class HashidsFactory
 {
     /**
-     * @param array $config
-     * @return Hashids
      * @throws HashidsException
      */
     public function make(array $config): Hashids
@@ -24,10 +17,6 @@ class HashidsFactory
         return $this->getInstance($this->getConfig($config));
     }
 
-    /**
-     * @param array $config
-     * @return array
-     */
     protected function getConfig(array $config): array
     {
         return [
@@ -38,8 +27,6 @@ class HashidsFactory
     }
 
     /**
-     * @param array $config
-     * @return Hashids
      * @throws HashidsException
      */
     protected function getInstance(array $config): Hashids

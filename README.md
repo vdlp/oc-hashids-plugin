@@ -9,7 +9,7 @@ You can also decode those ids back. This is useful in bundling several parameter
 ## Requirements
 
 * PHP 7.1 or higher
-* October CMS build 420 or higher
+* Preferably one of the latest October CMS build
 
 ## Installation
 

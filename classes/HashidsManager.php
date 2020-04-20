@@ -9,22 +9,12 @@ use Illuminate\Contracts\Config\Repository;
 use InvalidArgumentException;
 
 /**
- * Class HashidsManager
- *
- * @package Vdlp\Hashids\Classes
- *
  * @mixin Hashids
  */
 class HashidsManager
 {
-    /**
-     * @var Repository
-     */
     protected $config;
 
-    /**
-     * @var HashidsFactory
-     */
     protected $factory;
 
     /**
@@ -32,10 +22,6 @@ class HashidsManager
      */
     protected $instances = [];
 
-    /**
-     * @param Repository $config
-     * @param HashidsFactory $factory
-     */
     public function __construct(Repository $config, HashidsFactory $factory)
     {
         $this->config = $config;
@@ -43,8 +29,6 @@ class HashidsManager
     }
 
     /**
-     * @param string|null $name
-     * @return Hashids
      * @throws InvalidArgumentException
      */
     public function instance(string $name = null): Hashids
@@ -59,8 +43,6 @@ class HashidsManager
     }
 
     /**
-     * @param string|null $name
-     * @return Hashids
      * @throws InvalidArgumentException
      */
     public function reloadInstance(string $name = null): Hashids
@@ -72,36 +54,23 @@ class HashidsManager
         return $this->instance($name);
     }
 
-    /**
-     * @param string|null $name
-     * @return void
-     */
     public function removeInstance(string $name = null): void
     {
         $name = $name ?: $this->getDefaultInstance();
         unset($this->instances[$name]);
     }
 
-    /**
-     * @return string
-     */
     public function getDefaultInstance(): string
     {
         return $this->config->get('hashids.default');
     }
 
-    /**
-     * @param string $name
-     * @return void
-     */
     public function setDefaultInstance(string $name): void
     {
         $this->config->set('hashids.default', $name);
     }
 
     /**
-     * @param string|null $name
-     * @return array
      * @throws InvalidArgumentException
      */
     public function getInstanceConfig(string $name = null): array
@@ -120,8 +89,6 @@ class HashidsManager
     }
 
     /**
-     * @param string $method
-     * @param array $parameters
      * @return mixed
      * @throws InvalidArgumentException
      */
@@ -131,8 +98,6 @@ class HashidsManager
     }
 
     /**
-     * @param string $name
-     * @return Hashids
      * @throws InvalidArgumentException
      */
     protected function makeInstance(string $name): Hashids
@@ -142,8 +107,6 @@ class HashidsManager
     }
 
     /**
-     * @param array $config
-     * @return Hashids
      * @throws HashidsException
      */
     protected function createInstance(array $config): Hashids

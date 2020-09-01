@@ -3,3 +3,4 @@
 1.1.0:
     - Code optimizations
     - Moved service provider
+2.0.0: Drop PHP 7.1 support

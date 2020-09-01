@@ -2,7 +2,7 @@
     "name": "vdlp/oc-hashids-plugin",
     "description": "Allows developers to use secure hashed ID's in October CMS powered websites.",
     "type": "october-plugin",
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-only",
     "authors": [
         {
             "name": "Van der Let & Partners",

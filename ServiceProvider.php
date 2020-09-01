@@ -12,9 +12,6 @@ use Vdlp\Hashids\Classes\HashidsManager;
 
 class ServiceProvider extends BaseServiceProvider
 {
-    /**
-     * @return void
-     */
     public function boot(): void
     {
         $this->publishes([
@@ -24,9 +21,6 @@ class ServiceProvider extends BaseServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/config.php', 'hashids');
     }
 
-    /**
-     * @return void
-     */
     public function register(): void
     {
         $this->app->singleton(HashidsFactory::class, static function (): HashidsFactory {

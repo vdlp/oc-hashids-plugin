@@ -9,21 +9,28 @@ use Hashids\HashidsInterface;
 
 class Hashids implements HashidsInterface
 {
-    private $hashids;
+    private HashidsHelper $hashids;
 
     public function __construct(HashidsHelper $hashids)
     {
         $this->hashids = $hashids;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function encode(...$numbers): string
     {
         return $this->hashids->encode($numbers);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function decode($hash): int
     {
         $result = $this->hashids->decode($hash);
+
         if (array_key_exists(0, $result)) {
             return (int) $result[0];
         }
@@ -31,11 +38,17 @@ class Hashids implements HashidsInterface
         return 0;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function encodeHex($str): string
     {
         return $this->hashids->encodeHex($str);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function decodeHex($hash): string
     {
         return $this->hashids->decodeHex($hash);

@@ -24,20 +24,14 @@ You can also decode those ids back. This is useful in bundling several parameter
 
 ## Requirements
 
-* PHP 7.2 or higher
-* October CMS build 468 or higher
+* PHP 7.4 or higher
+* October CMS 1.x or 2.x
 
 ## Installation
 
-*CLI:*
-
 ```
-php artisan plugin:install Vdlp.Hashids
+composer require vdlp/oc-hashids-plugin
 ```
-
-*October CMS:*
-
-Go to Settings > Updates & Plugins > Install plugins and search for 'Hashids'.
 
 ## Configuration
 

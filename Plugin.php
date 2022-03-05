@@ -1,14 +1,12 @@
 <?php
 
-/** @noinspection PhpMissingParentCallCommonInspection */
-
 declare(strict_types=1);
 
 namespace Vdlp\Hashids;
 
 use System\Classes\PluginBase;
 
-class Plugin extends PluginBase
+final class Plugin extends PluginBase
 {
     public function pluginDetails(): array
     {

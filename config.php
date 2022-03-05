@@ -28,6 +28,7 @@ return [
     */
 
     'configurations' => [
+
         'main' => [
             'salt' => 'insert-salt-string-here',
             'length' => 10,
@@ -36,7 +37,9 @@ return [
         'different-configuration' => [
             'salt' => 'insert-different-salt-string-here',
             'length' => 100,
-            'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', # Default alphabet
+            'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
         ],
+
     ],
+
 ];

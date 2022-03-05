@@ -13,14 +13,9 @@ use InvalidArgumentException;
  */
 class HashidsManager
 {
-    protected $config;
-
-    protected $factory;
-
-    /**
-     * @var Hashids[]
-     */
-    protected $instances = [];
+    protected array $instances = [];
+    protected Repository $config;
+    protected HashidsFactory $factory;
 
     public function __construct(Repository $config, HashidsFactory $factory)
     {
@@ -31,7 +26,7 @@ class HashidsManager
     /**
      * @throws InvalidArgumentException
      */
-    public function instance(string $name = null): Hashids
+    public function instance(?string $name = null): Hashids
     {
         $name = $name ?: $this->getDefaultInstance();
 
@@ -45,7 +40,7 @@ class HashidsManager
     /**
      * @throws InvalidArgumentException
      */
-    public function reloadInstance(string $name = null): Hashids
+    public function reloadInstance(?string $name = null): Hashids
     {
         $name = $name ?: $this->getDefaultInstance();
 
@@ -54,7 +49,7 @@ class HashidsManager
         return $this->instance($name);
     }
 
-    public function removeInstance(string $name = null): void
+    public function removeInstance(?string $name = null): void
     {
         $name = $name ?: $this->getDefaultInstance();
         unset($this->instances[$name]);
@@ -73,13 +68,14 @@ class HashidsManager
     /**
      * @throws InvalidArgumentException
      */
-    public function getInstanceConfig(string $name = null): array
+    public function getInstanceConfig(?string $name = null): array
     {
         $name = $name ?: $this->getDefaultInstance();
 
         $configurations = $this->config->get('hashids.configurations');
+
         if (!isset($configurations[$name]) || !is_array($configurations[$name])) {
-            throw new InvalidArgumentException("Configuration $name is not properly configured.");
+            throw new InvalidArgumentException(sprintf('Configuration %s is not properly configured.', $name));
         }
 
         $config = $configurations[$name];
@@ -90,6 +86,7 @@ class HashidsManager
 
     /**
      * @return mixed
+     *
      * @throws InvalidArgumentException
      */
     public function __call(string $method, array $parameters)
@@ -103,6 +100,7 @@ class HashidsManager
     protected function makeInstance(string $name): Hashids
     {
         $config = $this->getInstanceConfig($name);
+
         return $this->createInstance($config);
     }
 

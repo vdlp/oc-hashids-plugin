@@ -14,13 +14,11 @@ use InvalidArgumentException;
 class HashidsManager
 {
     protected array $instances = [];
-    protected Repository $config;
-    protected HashidsFactory $factory;
 
-    public function __construct(Repository $config, HashidsFactory $factory)
-    {
-        $this->config = $config;
-        $this->factory = $factory;
+    public function __construct(
+        protected Repository $config,
+        protected HashidsFactory $factory
+    ) {
     }
 
     /**

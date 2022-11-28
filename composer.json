@@ -9,17 +9,31 @@
             "email": "octobercms@vdlp.nl"
         }
     ],
-    "require": {
-        "php": "^7.4 || ^8.0",
-        "composer/installers": "^1.0 || ^2.0",
-        "hashids/hashids": "^4.0",
-        "october/system": "^1.0 || ^2.0"
+    "support": {
+        "email": "octobercms@vdlp.nl"
     },
+    "require": {
+        "php": "^8.0.2",
+        "composer/installers": "^1.0 || ^2.0",
+        "hashids/hashids": "^4.1",
+        "october/rain": ">=2.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://gateway.octobercms.com"
+        }
+    ],
     "archive": {
         "exclude": [
             ".gitignore",
             ".github",
             ".idea/"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }

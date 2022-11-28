@@ -24,8 +24,8 @@ You can also decode those ids back. This is useful in bundling several parameter
 
 ## Requirements
 
-* PHP 7.4 or higher
-* October CMS 1.x or 2.x
+* PHP 8.0.2 or higher
+* October CMS 2.x or higher
 
 ## Installation
 

@@ -9,11 +9,9 @@ use Hashids\HashidsInterface;
 
 class Hashids implements HashidsInterface
 {
-    private HashidsHelper $hashids;
-
-    public function __construct(HashidsHelper $hashids)
-    {
-        $this->hashids = $hashids;
+    public function __construct(
+        private HashidsHelper $hashids
+    ) {
     }
 
     /**

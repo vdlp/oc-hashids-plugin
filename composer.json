@@ -24,13 +24,6 @@
             "url": "https://gateway.octobercms.com"
         }
     ],
-    "archive": {
-        "exclude": [
-            ".gitignore",
-            ".github",
-            ".idea/"
-        ]
-    },
     "config": {
         "allow-plugins": {
             "composer/installers": true

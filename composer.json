@@ -18,6 +18,9 @@
         "hashids/hashids": "^4.1",
         "october/rain": ">=2.0"
     },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.42"
+    },
     "repositories": [
         {
             "type": "composer",
@@ -26,7 +29,8 @@
     ],
     "config": {
         "allow-plugins": {
-            "composer/installers": true
+            "composer/installers": true,
+            "ergebnis/composer-normalize": true
         }
     }
 }

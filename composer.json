@@ -3,6 +3,7 @@
     "description": "Allows developers to use secure hashed ID's in October CMS powered websites.",
     "license": "GPL-2.0-only",
     "type": "october-plugin",
+    "abandoned": true,
     "authors": [
         {
             "name": "Van der Let & Partners",

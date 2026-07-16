@@ -3,6 +3,7 @@
     "description": "Allows developers to use secure hashed ID's in October CMS powered websites.",
     "license": "GPL-2.0-only",
     "type": "october-plugin",
+    "abandoned": true,
     "authors": [
         {
             "name": "Van der Let & Partners",
@@ -18,22 +19,19 @@
         "hashids/hashids": "^4.1",
         "october/rain": ">=2.0"
     },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.42"
+    },
     "repositories": [
         {
             "type": "composer",
             "url": "https://gateway.octobercms.com"
         }
     ],
-    "archive": {
-        "exclude": [
-            ".gitignore",
-            ".github",
-            ".idea/"
-        ]
-    },
     "config": {
         "allow-plugins": {
-            "composer/installers": true
+            "composer/installers": true,
+            "ergebnis/composer-normalize": true
         }
     }
 }
